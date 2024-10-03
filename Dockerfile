@@ -5,10 +5,10 @@ FROM alpine/java:21-jdk
 WORKDIR /app
 
 # Copy the JAR file into the container
-COPY target/my-spring-boot-app.jar /app/my-spring-boot-app.jar
+COPY target/*.jar /app/demoService.jar
 
 # Expose the port that the application will run on
 EXPOSE 8080
 
 # Run the JAR file
-ENTRYPOINT ["java", "-jar", "/app/my-spring-boot-app.jar"]
+ENTRYPOINT ["java", "-jar", "/app/demoService.jar"]
